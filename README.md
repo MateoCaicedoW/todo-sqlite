@@ -1,6 +1,4 @@
 ## SQLite Todo App
-<br><br>
-
 This is a simple todo app that uses SQLite as a database. It is built with Go and Leapkit.
 
 ### Getting started
