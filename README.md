@@ -1,17 +1,9 @@
-## LeapKit Template
-
-<img width="300" alt="logo" src="https://github.com/LeapKit/template/assets/645522/d5bcb8ed-c763-4b39-8cfb-aed694b87646">
+## SQLite Todo App
 <br><br>
 
-This is the  LeapKit template for building web applications with Go, HTMX and Tailwind CSS. It integrates useful features such as hot code reload and css recompiling.
+This is a simple todo app that uses SQLite as a database. It is built with Go and Leapkit.
 
 ### Getting started
-
-Use this template by using gonew:
-
-```sh
-go run rsc.io/tmp/gonew@latest github.com/leapkit/template@v1.1.5 superapp
-```
 
 ### Setup
 
@@ -31,3 +23,12 @@ go run ./cmd/dev
 ```
 
 And open `http://localhost:3000` in your browser.
+
+### Look over the Database
+
+To look over the database, you can go to `http://localhost:3000/todo-database` in your browser.
+
+Set the environment variables `MANAGER_USER` and `MANAGER_PASSWORD` to secure the database manager.
+
+This is using the SQLiteManager package, you can find more information about it in the following link:
+- [SQLiteManager](https://github.com/MateoCaicedoW/sqliteManager)
