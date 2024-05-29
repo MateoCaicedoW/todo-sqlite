@@ -3,7 +3,7 @@
         <div class="mb-4" _="on htmx:afterRequest if detail.successful tell [#title] set you.value to ''">
             <h1 class="text-grey-darkest">Todo List</h1>
             <div class="flex mt-4">
-                <input id="title" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" name="title" placeholder="Add Todo">
+                <input id="title" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" name="title" placeholder="Add Todo" hx-post="/" hx-trigger="keyup[keyCode==13]" hx-target="#table" hx-swap="outerHTML" hx-include="[name='title']">
                 <button class="flex-no-shrink p-2 border-2 rounded text-teal border-teal l" hx-post="/" hx-trigger="click" hx-target="#table" hx-swap="outerHTML" hx-include="[name='title']">Add</button>
             </div>
         </div>
