@@ -33,6 +33,7 @@ func main() {
 
 	sqliteManager := manager.New(
 		manager.WithPrefix("/todo-database"),
+		manager.WithConnection(db),
 	)
 
 	s.Handle("/", sqliteManager)

@@ -7,6 +7,10 @@ github.com/MateoCaicedoW/sqliteManager v0.1.5 h1:/qYiwxhBjuIsdwJTKrBcQ5a8+umgZbx
 github.com/MateoCaicedoW/sqliteManager v0.1.5/go.mod h1:9DxbQikULMttHupEgNS8WN5nukQpvOVV+4sUYIXMf94=
 github.com/MateoCaicedoW/sqliteManager v0.1.6 h1:YY9V2eQM5ThE229MIE3TVQ3PhYk5wIR/2ybjnpg2rLE=
 github.com/MateoCaicedoW/sqliteManager v0.1.6/go.mod h1:9DxbQikULMttHupEgNS8WN5nukQpvOVV+4sUYIXMf94=
+github.com/MateoCaicedoW/sqliteManager v0.1.7 h1:MkbOzdfCW84gU9T7i3o0xqmfHC9s8roR/vQBhYdlANM=
+github.com/MateoCaicedoW/sqliteManager v0.1.7/go.mod h1:9DxbQikULMttHupEgNS8WN5nukQpvOVV+4sUYIXMf94=
+github.com/MateoCaicedoW/sqliteManager v0.1.8 h1:3gfk1BWv70snhSJXRiWiUc0Lqc1S9IvkxOWwOzJOMWY=
+github.com/MateoCaicedoW/sqliteManager v0.1.8/go.mod h1:9DxbQikULMttHupEgNS8WN5nukQpvOVV+4sUYIXMf94=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fsnotify/fsnotify v1.7.0 h1:8JEhPFa5W2WU7YfeZzPNqzMP6Lwt7L2715Ggo0nosvA=
