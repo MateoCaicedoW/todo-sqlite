@@ -1,0 +1,15 @@
+<div class="flex mb-4 justify-between items-center" id="task-<%= task.ID %>">
+    <%= if (task.Completed) { %>
+        <p class="line-through text-green"><%= task.Title %></p>
+        <div class="flex">
+            <button class="p-2 border-2 rounded" hx-put="/<%= task.ID %>/complete?complete=false" hx-trigger="click" hx-target="#task-<%= task.ID %>" hx-swap="outerHTML">Not Done</button>
+            <button class="p-2 ml-2 border-2 rounded text-red border-red" hx-delete="/<%= task.ID %>/delete" hx-trigger="click" hx-target="#table" hx-swap="outerHTML">Remove</button>
+        </div>
+    <% } else { %>
+        <p class="text-grey-darkest"><%= task.Title %></p>
+        <div class="flex">
+            <button class="p-2 border-2 rounded  border-green hover:bg-green" hx-put="/<%= task.ID %>/complete?complete=true" hx-trigger="click" hx-target="#task-<%= task.ID %>" hx-swap="outerHTML">Done</button>
+            <button class="p-2 ml-2 border-2 rounded text-red border-red" hx-delete="/<%= task.ID %>/delete" hx-trigger="click" hx-target="#table" hx-swap="outerHTML">Remove</button>
+        </div>
+    <% } %>
+</div>

@@ -1,0 +1,11 @@
+<div id="table">
+    <%= if (len(tasks) == 0) { %>
+        <div class="flex mb-4 items-center">
+            <p class="w-full text-grey-darkest">There's no tasks yet</p>
+        </div>
+    <% } else { %>
+        <%= for (task) in tasks { %>
+            <%= partial("tasks/task.html") %>
+        <% } %>
+    <% } %>
+</div>
