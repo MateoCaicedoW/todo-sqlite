@@ -13,6 +13,8 @@ github.com/MateoCaicedoW/sqliteManager v0.1.8 h1:3gfk1BWv70snhSJXRiWiUc0Lqc1S9Iv
 github.com/MateoCaicedoW/sqliteManager v0.1.8/go.mod h1:9DxbQikULMttHupEgNS8WN5nukQpvOVV+4sUYIXMf94=
 github.com/MateoCaicedoW/sqliteManager v0.2.0 h1:8SEKCqFgN0h3JNwui9VhamcNnLmXwReFovbTMEsbA90=
 github.com/MateoCaicedoW/sqliteManager v0.2.0/go.mod h1:YTva1hB69onAajgI2oBH3ITWcfPJZ9zV2YKifMU7LSI=
+github.com/MateoCaicedoW/sqliteManager v0.2.1 h1:9xnRlVJDNnxekOl8xS74t4OcgJ82R/QzyyVoJIj3Pvo=
+github.com/MateoCaicedoW/sqliteManager v0.2.1/go.mod h1:QExGCDQ+qSg/wgWM/jIYTmZb064netNignMPZobK7Pg=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fsnotify/fsnotify v1.7.0 h1:8JEhPFa5W2WU7YfeZzPNqzMP6Lwt7L2715Ggo0nosvA=
