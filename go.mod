@@ -11,7 +11,7 @@ require (
 )
 
 require (
-	github.com/MateoCaicedoW/sqliteManager v0.2.1
+	github.com/MateoCaicedoW/sqliteManager v0.2.2
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gorilla/securecookie v1.1.2 // indirect
 	github.com/gorilla/sessions v1.2.2 // indirect
