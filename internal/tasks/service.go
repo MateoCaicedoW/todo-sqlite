@@ -1,18 +1,18 @@
 package tasks
 
 import (
+	"database/sql"
 	"todo/internal/models"
 
 	"github.com/gofrs/uuid/v5"
-	"github.com/jmoiron/sqlx"
 )
 
 type service struct {
-	db *sqlx.DB
+	db *sql.DB
 }
 
 // NewService creates a new home service
-func NewService(db *sqlx.DB) models.TaskService {
+func NewService(db *sql.DB) models.TaskService {
 	return &service{db: db}
 }
 
@@ -57,9 +57,19 @@ func (s *service) Complete(id uuid.UUID) error {
 
 func (s *service) List() ([]models.Task, error) {
 	var tasks []models.Task
-	err := s.db.Select(&tasks, "SELECT * FROM tasks")
+	rows, err := s.db.Query("SELECT * FROM tasks")
 	if err != nil {
 		return nil, err
+	}
+
+	for rows.Next() {
+		var task models.Task
+		err := rows.Scan(&task.ID, &task.Title, &task.Completed, &task.CreatedAt, &task.UpdatedAt)
+		if err != nil {
+			return nil, err
+		}
+
+		tasks = append(tasks, task)
 	}
 
 	return tasks, nil
@@ -67,7 +77,9 @@ func (s *service) List() ([]models.Task, error) {
 
 func (s *service) Find(id uuid.UUID) (models.Task, error) {
 	var task models.Task
-	err := s.db.Get(&task, "SELECT * FROM tasks WHERE id = ?", id)
+	row := s.db.QueryRow("SELECT * FROM tasks WHERE id = ?", id)
+
+	err := row.Scan(&task.ID, &task.Title, &task.Completed, &task.CreatedAt, &task.UpdatedAt)
 	if err != nil {
 		return models.Task{}, err
 	}

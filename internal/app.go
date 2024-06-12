@@ -9,7 +9,6 @@ import (
 	"todo/public"
 
 	"github.com/leapkit/core/assets"
-	"github.com/leapkit/core/db"
 	"github.com/leapkit/core/gloves"
 	"github.com/leapkit/core/render"
 	"github.com/leapkit/core/server"
@@ -45,13 +44,7 @@ var (
 		gloves.WatchExtension(".go", ".css", ".js"),
 	}
 
-	// DatabaseURL to connect and interact with our database instance.
-	DatabaseURL = cmp.Or(os.Getenv("DATABASE_URL"), "todo.db")
-
-	// DB is the database connection builder function
-	// that will be used by the application based on the driver and
-	// connection string.
-	DB = db.ConnectionFn(DatabaseURL, db.WithDriver("sqlite3"))
+	Environment = cmp.Or(os.Getenv("GO_ENV"), "development")
 )
 
 // AddRoutes mounts the routes for the application,

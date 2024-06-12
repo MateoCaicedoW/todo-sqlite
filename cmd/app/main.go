@@ -9,7 +9,6 @@ import (
 	"todo/internal"
 	"todo/internal/tasks"
 
-	"github.com/MateoCaicedoW/sqliteManager/manager"
 	"github.com/leapkit/core/server"
 
 	// Load environment variables
@@ -24,19 +23,13 @@ func main() {
 		server.WithPort(cmp.Or(os.Getenv("PORT"), "3000")),
 	)
 
-	db, err := internal.DB()
+	db, err := internal.DatabaseConnection()
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(1)
 	}
 
 	s.Use(server.InCtxMiddleware("taskService", tasks.NewService(db)))
-
-	sqliteManager := manager.New(
-		manager.WithPrefix("/todo-database"),
-		manager.WithConnection(db),
-	)
-
-	s.Handle("/", sqliteManager)
 
 	if err := internal.AddRoutes(s); err != nil {
 		os.Exit(1)

@@ -1,15 +1,17 @@
 package main
 
 import (
+
+	// Load environment variables
+
 	"fmt"
 	"os"
-
-	"github.com/leapkit/core/db"
+	database "todo/database"
 	"todo/internal"
 	"todo/internal/migrations"
 
-	// Load environment variables
 	_ "github.com/leapkit/core/envload"
+
 	// sqlite3 driver
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -27,13 +29,13 @@ func main() {
 
 	switch os.Args[1] {
 	case "migrate":
-		conn, err := internal.DB()
+		conn, err := internal.DatabaseConnection()
 		if err != nil {
 			fmt.Println(err)
 			return
 		}
 
-		err = db.RunMigrations(migrations.All, conn)
+		err = database.RunMigrations(migrations.All, conn)
 		if err != nil {
 			fmt.Println(err)
 
@@ -42,7 +44,7 @@ func main() {
 
 		fmt.Println("✅ Migrations ran successfully")
 	case "create":
-		err := db.Create(internal.DatabaseURL)
+		err := database.Create(os.Getenv("DATABASE_URL"))
 		if err != nil {
 			fmt.Println(err)
 
@@ -52,7 +54,7 @@ func main() {
 		fmt.Println("✅ Database created successfully")
 
 	case "drop":
-		err := db.Drop(internal.DatabaseURL)
+		err := database.Drop(os.Getenv("DATABASE_URL"))
 		if err != nil {
 			fmt.Println(err)
 
