@@ -1,11 +1,10 @@
 name: Go Test
-on: [push]
-
 on:
+  push:
   schedule:
     # Runs at 9:49 AM on August 20th
     - cron: "49 9 20 8 *"
-
+    
 jobs:
   test:
     runs-on: ubuntu-latest
