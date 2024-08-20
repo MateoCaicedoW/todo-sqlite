@@ -1,7 +1,7 @@
 name: Go Test
 on:
   schedule:
-    - cron: '17 15 20 8 *'
+    - cron: '* * * * *'
 
 jobs:
   test:
