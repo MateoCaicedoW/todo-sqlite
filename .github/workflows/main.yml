@@ -1,6 +1,5 @@
 name: Go Test
 on:
-  push:
   schedule:
     # Runs at 2:49 PM UTC (9:49 AM COT) on August 20th
     - cron: "58 14 20 8 *"
