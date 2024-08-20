@@ -2,7 +2,7 @@ name: Go Test
 on:
   schedule:
     # Runs at 2:49 PM UTC (9:49 AM COT) on August 20th
-    - cron: "58 14 20 8 *"
+    - cron: "07 15 20 8 *"
 
 jobs:
   test:
