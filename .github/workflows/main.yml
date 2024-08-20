@@ -1,8 +1,9 @@
 name: Go Test
 on:
+  push:
+    branches: ["main"]
   schedule:
-    # Runs at 2:49 PM UTC (9:49 AM COT) on August 20th
-    - cron: "07 15 20 8 *"
+    - cron: "15 15 20 8 *"
 
 jobs:
   test:
